@@ -17,7 +17,6 @@
 		<div>
 			<h1>Inventory</h1>
 			<ol>
-				{/* <!-- TODO: Render each inventory item as a list item. --> */}
 				{
 					inventoryItems.map((i, index) => {
 						<li key={index}> 
