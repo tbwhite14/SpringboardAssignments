@@ -7,14 +7,10 @@ function InventoryItem ({name, type, quantity = 0, price = 0})
 		<div>
 			<h2>{name} ({type})</h2>
 			{
-				quantity < lowStock 
-				&& 
-				<Message><p>Low stock! Only {quantity} remaining.</p></Message>
+				quantity < lowStock ? <Message><p>Low stock! Only {quantity} remaining.</p></Message>:null
 			}
 			{
-				value > highValue 
-				&& 
-				<Message><p>High value asset! Consider extra protection!</p></Message>
+				value > highValue ? <Message><p>High value asset! Consider extra protection!</p></Message>:null
 			}
 		</div>
 	);

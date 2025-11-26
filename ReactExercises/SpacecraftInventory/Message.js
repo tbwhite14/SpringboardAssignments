@@ -4,5 +4,5 @@ function Message (props)
 		<div>
 			{props.children}
 		</div>
-	);
+	)
 }

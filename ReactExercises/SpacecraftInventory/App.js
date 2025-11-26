@@ -18,11 +18,11 @@
 			<h1>Inventory</h1>
 			<ol>
 				{
-					inventoryItems.map((i, index) => {
+					inventoryItems.map((i, index) => (
 						<li key={index}> 
-							<InventoryItem name={i.name} type={i.type} quantity={i.quantity} price={i.price} />;
+							<InventoryItem name={i.name} type={i.type} quantity={i.quantity} price={i.price} />
 						</li>
-					})
+					))
 				}
 			</ol>
 		</div>
