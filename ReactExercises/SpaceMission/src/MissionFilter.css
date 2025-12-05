@@ -1,0 +1,13 @@
+/* .filter-box{
+    display: flex;
+    justify-content: space-evenly;
+} */
+
+.filter-btn{
+    position: relative;
+    left: 40%;
+    margin:2px;
+    height:fit-content;
+    font-size: large;
+    border-radius: 5px;
+}

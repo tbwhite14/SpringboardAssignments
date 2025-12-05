@@ -1,0 +1,43 @@
+.mission-card {
+    background-color:rgba(205, 220, 241, 0.986);
+    width: 90vw;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    color: black;
+    border-radius: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction:row;
+}
+
+.card-section {
+    position: relative;
+    left: 20%
+}
+
+.btn-box{
+    position: absolute;
+    left: 50%;
+}
+
+.action-btn{
+    margin: 1rem;
+    font-size:larger;
+    position: relative;
+    left: 10px;
+    max-width: 100px;
+    max-height: 30px;
+    border-radius: 10px;
+    background-color: rgb(254, 87, 87);
+}
+
+.action-btn:last-of-type{
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    background-color: rgb(25, 217, 25);
+}
+

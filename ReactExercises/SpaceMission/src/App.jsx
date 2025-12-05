@@ -18,7 +18,7 @@ function App ()
 
 	return (
 		<>
-      <h2>Space Mission Control</h2>
+      <h1>Space Mission Control</h1>
       <MissionControl allMissions={INITIAL_MISSIONS} />
 		</>
 	);

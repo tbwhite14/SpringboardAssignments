@@ -1,13 +1,16 @@
-function MissionFilter({removeFilter, filterMissions}) {
-    const handleRemoveFilter = () => removeFilter();
-    const handleFilterMissions = (condition) => filterMissions(condition);
+import "./MissionFilter.css"
+function MissionFilter({setFilter}) {
+    const filters = ["All","Planned","Active","Completed"];
     return(
-        <>
-            <button onClick={handleRemoveFilter()}>All</button>
-            <button onClick={handleFilterMissions("Planned")}>Planned</button>
-            <button onClick={handleFilterMissions("Active")}>Active</button>
-            <button onClick={handleFilterMissions("Completed")}>Completed</button>
-        </>
+        <div className="filter-box"> 
+            {filters.map((newFilter) => 
+                <button 
+                    onClick={() => setFilter(newFilter)}
+                    className="filter-btn"
+                >
+                    {newFilter}
+                </button>)}
+        </div>
     )
 }
 
