@@ -7,6 +7,7 @@ function MissionFilter({setFilter}) {
                 <button 
                     onClick={() => setFilter(newFilter)}
                     className="filter-btn"
+                    key={newFilter}
                 >
                     {newFilter}
                 </button>)}

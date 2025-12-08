@@ -1,14 +1,28 @@
 function MissionAction({update, idx}) {
     const actions = ["Launch", "Complete"];
     return(
-        <div className="btn-box">
-            {actions.map((newAction) => 
+        <div key={`${idx}b`} className="btn-box">
+            {/* {actions.map((newStatus) => 
                 <button 
-                    onClick={update(idx,newAction)}
+                    onClick={() => update(idx,newStatus)}
                     className="action-btn"
+                    key={`${idx}b${newStatus}`}
                 >
-                    {newAction}
-                </button>)}
+                    {newStatus}
+                </button>)} */}
+            <button
+                className="action-btn"
+                onClick={() => update(idx,"Active")}
+            >
+                Launch
+            </button>
+            <button
+                className="action-btn"
+                onClick={() => update(idx,"Completed")}
+            >
+                Complete
+            </button>
+
         </div>
     )
 }
