@@ -1,14 +1,11 @@
-function FireButton({gameState, click}) {
+function FireButton({fire}) {
     const buttonStyles = {
         color: "red",
         borderColor: "red"
     }
-    const buttonText = 
-        gameState === "Active"
-        ? "Fire!"
-        : "Play Again?";
+    
     return(
-        <button style={buttonStyles} onClick={() => click()}>{buttonText}</button>
+        <button style={buttonStyles} onClick={() => fire()} className="action-btn">Fire!</button>
     )
 }
 

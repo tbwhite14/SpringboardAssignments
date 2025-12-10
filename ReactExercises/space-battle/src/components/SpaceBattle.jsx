@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Spaceship from "./Spaceship";
 import FireButton from "./FireButton";
+import ResetButton from "./ResetButton";
 import BattleMessage from "./BattleMessage";
+import "./SpaceBattle.css";
 
 function SpaceBattle() {
     const staringHealth = 100;
-    // const [playerHealth, setPlayerHealth] = useState(staringHealth);
-    // const [enemyHealth, setEnemyHealth] = useState(staringHealth);
     const [health, setHealth] = useState({player: staringHealth, enemy: staringHealth})
 
     const gameState = 
@@ -28,14 +28,16 @@ function SpaceBattle() {
     }
 
     return(
-        <div key="battle-sim">
+        <div key="battle-sim" id="game-box">
             <BattleMessage gameState={gameState} player={health.player}/>
-            <Spaceship key="Player" ship="Player" currentHealth={health.player}/>
-            <Spaceship key="Enemy" ship="Enemy" currentHealth={health.enemy}/>
+            <div id="ship-box">
+                <Spaceship key="Player" ship="Player" currentHealth={health.player}/>
+                <Spaceship key="Enemy" ship="Enemy" currentHealth={health.enemy}/>
+            </div>
             {
                 gameState === "Active" 
-                    ? <FireButton gameState={gameState} click={fire}/> 
-                    : <FireButton gameState={gameState} click={resetGame}/>
+                    ? <FireButton fire={fire}/> 
+                    : <ResetButton reset={resetGame}/>
             }
         </div>
     )

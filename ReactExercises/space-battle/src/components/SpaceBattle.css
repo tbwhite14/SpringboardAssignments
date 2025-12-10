@@ -1,0 +1,18 @@
+#ship-box{
+    font-size: 1.5em;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn{
+    width: 150px;
+    height: 150px;
+    font-size: 2em;
+    background-color: black;
+    border-style: double;
+    border-width: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: -2.1em;
+}

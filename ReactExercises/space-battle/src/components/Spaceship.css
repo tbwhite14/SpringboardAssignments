@@ -1,0 +1,16 @@
+.spaceship{
+    background-color: rgb(98, 98, 98);
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#Player-ship{
+    color: rgb(99, 222, 11);
+    align-self: flex-start;
+}
+
+#Enemy-ship{
+    color: rgb(255, 0, 0);
+    align-self: flex-end;
+}

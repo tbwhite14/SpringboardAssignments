@@ -1,3 +1,5 @@
+import "./BattleMessage.css";
+
 function BattleMessage({gameState, player}) {
     const gameOver = 
         player === 0 
@@ -5,11 +7,11 @@ function BattleMessage({gameState, player}) {
         : "Victory! You sucessufully defended your ship";
     const message = 
         gameState === "Active" 
-        ? "Engage enemy vessel!" 
+        ? "Your spaceship is under attack.  Engage the enemy vessel!" 
         : gameOver;
 
     return(
-        <div>{message}</div>
+        <div id="game-message">{message}</div>
     )
 }
 

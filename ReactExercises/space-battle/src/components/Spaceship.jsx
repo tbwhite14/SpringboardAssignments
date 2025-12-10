@@ -1,7 +1,9 @@
+import "./Spaceship.css";
+
 function Spaceship({ship, currentHealth}) {
     return(
         <div id={`${ship}-ship`} className="spaceship">
-            {ship} health :{currentHealth}
+            {ship} health: <b>{currentHealth}</b>
         </div>
     )
 }
