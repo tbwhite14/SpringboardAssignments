@@ -1,26 +1,37 @@
-function ItemForm({ formData, handleChange, handleSubmit, isValid }) {
-    
-    const markInvalid = [];
-    
-    if (!isValid) {
-        const inputs = Object.keys(formData);
-        inputs.map((key) => {!formData[key] ? markInvalid.push(key) : null})
-    }
+function ItemForm({ formData, handleChange, handleSubmit, isTouched, isValid }) {
     
     const errorStyle = {
         borderColor: "red",
-        borderWidth: "3px"
+        borderWidth: "2px",
+        borderStyle: "solid"
     }
     
     const defaultStyle = {
         borderColor: "black",
         borderWidth: "3px"
     }
+
+    const inputs = Object.keys(formData);
+
+    const styleList = {
+        name: defaultStyle,
+        quantity: defaultStyle,
+        purpose: defaultStyle,
+        agree: defaultStyle
+    }
+
+    for(let i of inputs){
+        if(isTouched[i] && !isValid[i]) {
+            styleList[i] = errorStyle;
+        }
+    }
     
     return(
-        // <form onSubmit={handleSubmit}>
         <>
-            <div style={markInvalid.includes("name") ? errorStyle : defaultStyle}>
+            <div 
+                className="input-box"
+                style={styleList.name}
+            >
                 <input 
                     id="name" 
                     name="name" 
@@ -30,7 +41,10 @@ function ItemForm({ formData, handleChange, handleSubmit, isValid }) {
                     onChange={handleChange}
                 />
             </div>    
-            <div style={markInvalid.includes("quantity") ? errorStyle : defaultStyle}>
+            <div 
+                className="input-box"
+                style={styleList.quantity}
+            >
                 <input 
                     id="quantity" 
                     name="quantity" 
@@ -40,7 +54,10 @@ function ItemForm({ formData, handleChange, handleSubmit, isValid }) {
                     onChange={handleChange}
                 />
             </div>    
-            <div style={markInvalid.includes("purpose") ? errorStyle : defaultStyle}>
+            <div 
+                className="input-box"
+                style={styleList.purpose}
+            >
                 <input 
                     id="purpose" 
                     name="purpose" 
@@ -50,7 +67,10 @@ function ItemForm({ formData, handleChange, handleSubmit, isValid }) {
                     onChange={handleChange}
                 />
             </div>    
-            <div style={markInvalid.includes("agree") ? errorStyle : defaultStyle}>
+            <div 
+                className="input-box"
+                style={styleList.agree}
+            >
                 <input 
                     id="agree" 
                     name="agree" 
@@ -62,8 +82,6 @@ function ItemForm({ formData, handleChange, handleSubmit, isValid }) {
             </div>
             <button onClick={() => handleSubmit()}>Add Item</button> 
         </>
-        // </form>
-       
     )
 }
 
