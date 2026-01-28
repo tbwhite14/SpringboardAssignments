@@ -27,11 +27,12 @@ function ItemForm({ formData, handleChange, handleSubmit, isTouched, isValid }) 
     }
     
     return(
-        <>
+        <div  id="form-box">
             <div 
                 className="input-box"
                 style={styleList.name}
             >
+                <label htmlFor="name">Item name: </label>
                 <input 
                     id="name" 
                     name="name" 
@@ -45,6 +46,7 @@ function ItemForm({ formData, handleChange, handleSubmit, isTouched, isValid }) 
                 className="input-box"
                 style={styleList.quantity}
             >
+                <label htmlFor="quantity">Quantity loaded: </label>
                 <input 
                     id="quantity" 
                     name="quantity" 
@@ -58,6 +60,7 @@ function ItemForm({ formData, handleChange, handleSubmit, isTouched, isValid }) 
                 className="input-box"
                 style={styleList.purpose}
             >
+                <label htmlFor="purpose">Purpose of item: </label>
                 <input 
                     id="purpose" 
                     name="purpose" 
@@ -81,7 +84,7 @@ function ItemForm({ formData, handleChange, handleSubmit, isTouched, isValid }) 
                 <label htmlFor="agree">Agree? </label>
             </div>
             <button onClick={() => handleSubmit()}>Add Item</button> 
-        </>
+        </div>
     )
 }
 

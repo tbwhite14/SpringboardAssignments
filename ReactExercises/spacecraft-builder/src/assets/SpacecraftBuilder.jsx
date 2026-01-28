@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ItemForm from "./ItemForm";
 import InventoryDisplay from "./InventoryDisplay";
 import "./SpacecraftBuilder.css";
@@ -32,16 +32,25 @@ function SpacecraftBuilder() {
             ...data,
             [name]: name === agree ? checked : value
         }))
-        formData[name] === "" 
-            ? setIsValid(valid => ({
-                ...valid,
-                [name]: false
-            }))
-            : setIsValid(valid => ({
-                ...valid,
-                [name]: true
-            }))
     }
+
+    useEffect(() => {
+        const names = Object.keys(formData);
+        for(let name of names){
+            if(isTouched[name]){
+                formData[name] === "" 
+                    ? setIsValid(valid => ({
+                        ...valid,
+                        [name]: false
+                    }))
+                    : setIsValid(valid => ({
+                        ...valid,
+                        [name]: true
+                    }))
+            }
+        }
+    },[formData])
+
 
     // function validation() {
     //     if(errorList.length !== 0){

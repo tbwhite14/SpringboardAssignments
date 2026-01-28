@@ -1,5 +1,16 @@
 .input-box{
-    height: 30px;
-    width: 200px;
+    /* height: 30px;
+    width: 200px; */
     margin: 5px;
+}
+
+#form-box{
+    outline-width: 2px;
+    outline-color: white;
+    outline-style: solid;
+    padding: 2em;
+    position: static;
+    left: 10px;
+    top: 10px;
+    text-align: left;
 }
